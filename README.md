@@ -3,3 +3,4 @@
 ## Authors
 
 - Geo Garcia
+- Josiah Anderson 'Jo'
