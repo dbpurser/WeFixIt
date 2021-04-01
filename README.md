@@ -3,4 +3,5 @@
 ## Authors
 
 - Brooks Purser
-
+- Geo Garcia
+- Josiah Anderson 'Jo'
