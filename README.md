@@ -2,4 +2,4 @@
 
 ## Authors
 
--Joshua Deason
+- Joshua Deason
