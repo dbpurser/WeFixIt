@@ -2,4 +2,8 @@
 
 ## Authors
 
+- Brooks Purser
+- Geo Garcia
+- Josiah Anderson 'Jo'
 - Joshua Deason
+
