@@ -6,9 +6,9 @@
 #  brand                    :string
 #  consultationAvailability :datetime
 #  damage                   :string
+#  deviceType               :string
 #  extra                    :text
 #  model                    :string
-#  type                     :string
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
 #

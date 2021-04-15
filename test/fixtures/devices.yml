@@ -6,25 +6,25 @@
 #  brand                    :string
 #  consultationAvailability :datetime
 #  damage                   :string
+#  deviceType               :string
 #  extra                    :text
 #  model                    :string
-#  type                     :string
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
 #
 
 one:
-  type: 
+  deviceType: MyString
   model: MyString
   brand: MyString
   damage: MyString
   extra: MyText
-  consultationAvailability: 2021-04-15 00:23:37
+  consultationAvailability: 2021-04-15 02:20:46
 
 two:
-  type: 
+  deviceType: MyString
   model: MyString
   brand: MyString
   damage: MyString
   extra: MyText
-  consultationAvailability: 2021-04-15 00:23:37
+  consultationAvailability: 2021-04-15 02:20:46
