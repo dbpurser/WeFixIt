@@ -10,6 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Repair < ApplicationRecord
-
+    validates :completed, presence: true
+    validates :status, inclusion:{ in: ['In Progress', 'Processing', 'Complete', 'Ready for Pickup'] }
+    validates :specialist, presence: true
 end
-
