@@ -15,7 +15,11 @@
 require "test_helper"
 
 class DeviceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "fixtures are valid" do
+    devices.each do |device|
+      assert device.valid?, device.errors.full_messages.inspect
+    end
+  end
+
 end
