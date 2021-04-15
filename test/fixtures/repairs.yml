@@ -11,12 +11,12 @@
 #
 
 one:
-  status: Ready to complete
+  status: Complete
   completed: true
   specialist: bob
 
 two:
-  status: In progress
+  status: In Progress
   completed: false
   specialist: Billy
 
