@@ -33,4 +33,41 @@ class DeviceTest < ActiveSupport::TestCase
     end
   end
 
+  test "damage must be from list" do
+    device_one = devices(:one)
+    device_one.damage = 'gold'
+    assert_not device_one.valid?
+  end
+
+  test "device type must be from list" do
+    device_one = devices(:one)
+    device_one.deviceType = 'pear'
+    assert_not device_one.valid?
+  end
+
+  test "brand must be present" do
+    device_one = devices(:one)
+    device_one.brand = ''
+    assert_not device_one.valid?
+  end
+
+  test "model must be present" do
+    device_one = devices(:one)
+    device_one.model = ''
+    assert_not device_one.valid?
+  end
+
+  test "extra must be present if damage is other" do
+    device_one = devices(:one)
+    device_one.damage = 'other'
+    device_one.model = ''
+    assert_not device_one.valid?
+  end
+
+  test "consultationAvailability must be a date" do
+    device_one = devices(:one)
+    device_one.consultationAvailability = 'never'
+    assert_not device_one.valid?
+  end
+
 end
