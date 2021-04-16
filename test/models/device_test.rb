@@ -35,7 +35,7 @@ class DeviceTest < ActiveSupport::TestCase
 
   test "damage must be from list" do
     device_one = devices(:one)
-    device_one.damage = 'gold'
+    device_one.damage = 'glitter'
     assert_not device_one.valid?
   end
 
@@ -64,9 +64,9 @@ class DeviceTest < ActiveSupport::TestCase
     assert_not device_one.valid?
   end
 
-  test "consultationAvailability must be a date" do
+  test "consultationAvailability must be present" do
     device_one = devices(:one)
-    device_one.consultationAvailability = 'never'
+    device_one.consultationAvailability = ''
     assert_not device_one.valid?
   end
 

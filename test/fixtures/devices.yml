@@ -28,7 +28,7 @@ one:
   deviceType: phone
   model: iphone12
   brand: apple
-  damage: cracked screen
+  damage: broken screen
   extra: dropped my phone
   consultationAvailability: 2021-04-15 02:20:46
   user: one
@@ -38,7 +38,7 @@ two:
   deviceType: laptop
   model: MacBook
   brand: apple
-  damage: overheat
+  damage: fried-hard-drive
   extra: sounds like an airplane when I turn it on
   consultationAvailability: 2021-04-15 02:20:46
   user: one
