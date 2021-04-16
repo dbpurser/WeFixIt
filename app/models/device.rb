@@ -11,6 +11,16 @@
 #  model                    :string
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+#  user_id                  :bigint
+#
+# Indexes
+#
+#  index_devices_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
 
 #  user_id                  :bigint
 #
@@ -29,6 +39,14 @@ class Device < ApplicationRecord
         class_name: 'User',
         foreign_key: 'user_id',
         inverse_of: :devices,
+    )
+
+    has_many(
+        :repairs,
+        class_name: 'Repair',
+        foreign_key: 'device_id',
+        inverse_of: :device,
+        dependent: :destroy
     )
 
 end
