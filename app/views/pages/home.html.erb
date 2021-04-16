@@ -1,0 +1,48 @@
+<!--this is how to comment -->
+<!--I added a styling block for customization purposes. Padding 
+adds whitespace around the "block" so the sign-in link has 10 pixels of padding all around it. You are welcome to delete it,
+I just did not want the buttons to be touching.You can add centering styles as well using
+the same way I added to the "sign_in block"-->
+
+<!-- within this style block you can add formatting to the diffeent blocks
+go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
+ but there are tons of other tutorials on there too for other things -->
+
+<!-- the class=" " that I added to the div blocks are names for the blocks. You can use
+    the names within the <style>...</style> section to add css to those blocks-->
+
+<style>
+
+.sign_in{
+    padding: 10px;
+    text-align: center;
+}
+
+</style>
+
+<h1 class="my-4">We Fix It!</h1>
+
+    <div class="authentication_block">
+        <p>
+            
+            <% if user_signed_in? %>
+                <div class="greeting">
+
+                    Hello, <%= current_user.email%> <%= link_to 'edit profile', edit_user_registration_path%>
+                </div>
+
+                <div class="sign_out">
+                    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' %>
+                </div>
+            <% else %>
+                <div class="sign_in">
+                    <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
+                </div>
+
+                <div class="sign_up">
+                    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
+                </div>
+            <% end %>
+        
+        </p>
+    </div>
