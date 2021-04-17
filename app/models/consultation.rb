@@ -13,4 +13,7 @@ class Consultation < ApplicationRecord
     # belongs_to :device
     # #this says that the consultation belongs to a user based on the user the device is associated with
     # belongs_to :user, through: :device 
+
+    validates :description, presence: true, allow_blank: false
+    
 end
