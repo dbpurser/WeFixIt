@@ -15,5 +15,12 @@ class Consultation < ApplicationRecord
     # belongs_to :user, through: :device 
 
     validates :description, presence: true, allow_blank: false
-    
+    validates :date, presence: true, allow_nil: false
+    validate :date_not_in_past
+    def date_not_in_past
+        return if date.nil?
+        return if Date.today <= date
+        errors.add(:date, "Error! Incorrect Date Chosen.")
+
+    end
 end
