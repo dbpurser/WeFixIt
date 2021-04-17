@@ -12,7 +12,12 @@
 require "test_helper"
 
 class ConsultationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "assert description cannot be nil or blank" do
+    c = Consultation.new(date: Date.tomorrow)
+    assert_not c.valid?
+    c.description = ""
+    assert_not c.valid?
+    c.description = "repair phone screen"
+    assert c.valid?
+  end
 end
