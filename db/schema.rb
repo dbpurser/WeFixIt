@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 2021_04_18_020817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "devices", force: :cascade do |t|
+    t.string "deviceType"
+    t.string "model"
+    t.string "brand"
+    t.string "damage"
+    t.text "extra"
+    t.datetime "consultationAvailability"
+  end
+
   create_table "repairs", force: :cascade do |t|
     t.string "status"
     t.boolean "completed"
