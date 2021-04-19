@@ -11,6 +11,7 @@
 #  model                    :string
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+
 #  user_id                  :bigint
 #
 # Indexes
@@ -29,4 +30,5 @@ class Device < ApplicationRecord
         foreign_key: 'user_id',
         inverse_of: :devices,
     )
+
 end

@@ -11,6 +11,7 @@
 #  model                    :string
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+
 #  user_id                  :bigint
 #
 # Indexes
@@ -20,6 +21,7 @@
 # Foreign Keys
 #
 #  fk_rails_...  (user_id => users.id)
+
 #
 
 one:
@@ -31,6 +33,7 @@ one:
   consultationAvailability: 2021-04-15 02:20:46
   user: one
 
+
 two:
   deviceType: MyString
   model: MyString
@@ -39,3 +42,4 @@ two:
   extra: MyText
   consultationAvailability: 2021-04-15 02:20:46
   user: one
+
