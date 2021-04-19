@@ -7,12 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user1 = User.create!(
-  email: "bob@email.com",
-  password: "password"
+
+admin1 = User.create!(
+  email: "jkirk@email.com",
+  password: "enterprise",
+  first_name: "James",
+  last_name: "Kirk",
+  address: "555 Enterprise Lane",
+  city: "Seatle",
+  state: "WA",
+  zip_code: "12345",
+  phone_number: "(123) 456-7891",
+  specialty: "phone-repair",
+  is_admin: true
 )
 
-user2 = User.create!(
-  email: "alice@email.com",
-  password: "password"
+
+user1 = User.create!(
+  email: "wesley@email.com",
+  password: "password",
+  first_name: "Wesley",
+  last_name: "Crusher",
+  address: "444 Enterprise Lane",
+  city: "Seatle",
+  state: "WA",
+  zip_code: "12345",
+  phone_number: "(123) 555-4444",
+  specialty: '',
+  is_admin: false
+
 )
