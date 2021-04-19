@@ -35,3 +35,37 @@ user1 = User.create!(
   specialty: '',
   is_admin: false
 )
+
+user2 = User.create!(
+  email: "jhopper@email.com",
+  password: "password",
+  first_name: "James",
+  last_name: "Hopper",
+  address: "345 Cabin Rd",
+  city: "Hawkins",
+  state: "IN",
+  zip_code: "46001",
+  phone_number: "(930) 654-1234",
+  specialty: '',
+  is_admin: false
+)
+
+device1 = Device.create!(
+  deviceType: "Phone",
+  brand: "Apple",
+  model: "iPhone SE",
+  damage: "other",
+  extra: "it wont turn on :(",
+  consultationAvailability: "2021-04-20 02:20:00",
+  user: user1
+)
+
+device2 = Device.create!(
+  deviceType: "Laptop",
+  brand: "Lenovo",
+  model: "ThinkPad",
+  damage: "spilled-juice",
+  extra: "My daughter, Eleven, spilled some juice on my laptop, can you fix it?",
+  consultationAvailability: "2021-04-23 02:20:00",
+  user: user2
+)

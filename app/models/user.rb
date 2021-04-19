@@ -31,6 +31,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  has_many(
+    :devices,
+    class_name: 'Device',
+    foreign_key: 'user_id',
+    inverse_of: :user,
+    dependent: :destroy
+  )
+
+
   #presence validations
   validates :first_name, presence: true
   validates :last_name, presence: true
