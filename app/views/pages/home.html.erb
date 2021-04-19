@@ -27,6 +27,7 @@ go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
             
             <% if user_signed_in? %>
                 <div class="greeting">
+
                     Hello, <%= current_user.email%> <%= link_to 'edit profile', edit_user_registration_path%>
                 </div>
 
