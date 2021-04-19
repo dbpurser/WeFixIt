@@ -48,7 +48,7 @@
 
 </style>
 
-<h1 class="header1">We Fix It</h1>
+
 <h2 class="header2">Sign up</h2>
 
 
@@ -56,20 +56,24 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   
 
-  <div class="field">
-    <table class="boxes">
-      <tr>
-        <th>
+  
+  <table class="boxes">
+    <tr>
+      <th>
+        <div class="field">
           <%= f.text_field :first_name, autofocus: true %><br />
           <%= f.label :first_name %>
-        </th>
-        <th>
+        </div>
+      </th>
+      <th>
+        <div class="field">
           <%= f.text_field :last_name, autofocus: true %><br />
           <%= f.label :last_name %>
-        </th>
-      </tr>
-    </table>
-  </div>
+        </div>
+      </th>
+    </tr>
+  </table>
+
 
 
   <div class="field">

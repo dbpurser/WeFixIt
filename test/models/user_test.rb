@@ -28,7 +28,71 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+
+  test "user fixtures are valid" do
+    users.each do |user|
+      assert user.valid?, user.errors.full_messages.inspect
+    end
+  end
+
+  test "User first name must be present" do
+    user1 = users(:one)
+    user1.first_name = ''
+    assert_not user1.valid?
+  end
+
+  test "User last name must be present" do
+    user1 = users(:one)
+    user1.last_name = ''
+    assert_not user1.valid?
+  end
+
+  test "User address must be present" do
+    user1 = users(:one)
+    user1.address = ''
+    assert_not user1.valid?
+  end
+
+  test "User city must be present" do
+    user1 = users(:one)
+    user1.city = ''
+    assert_not user1.valid?
+  end
+
+  test "User state must be present" do
+    user1 = users(:one)
+    user1.state = ''
+    assert_not user1.valid?
+  end
+
+  test "User zip code must be present" do
+    user1 = users(:one)
+    user1.zip_code = ''
+    assert_not user1.valid?
+  end
+
+  test "User phone must be at least 12 characters long" do
+    user1 = users(:one)
+    user1.phone_number = ''
+    assert_not user1.valid?
+    user1.phone_number = '01234567891' #this is 11 characters long
+    assert_not user1.valid?
+  end
+
+  ## pretty much just a glorified presence validations, 
+  ## will become useless if we change to a 2 devise User
+  ## solution (admin and customer individual devise classes)
+  test "User is_admin must be true or false" do
+    user1 = users(:one)
+    user1.is_admin = ''
+    assert_not user1.valid?
+  end
+
+  test "User specialty presence if is_admin is true" do
+    user1 = users(:one)
+    user1.specialty = ''
+    assert_not user1.valid?
+  end
+
 end

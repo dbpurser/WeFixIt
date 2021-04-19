@@ -13,11 +13,14 @@ admin1 = User.create!(
   first_name: "James",
   last_name: "Kirk",
   address: "555 Enterprise Lane",
-  zip_code: "12345",
-  state: "WA",
   city: "Seatle",
-  phone_number: "(123) 456-7891"
+  state: "WA",
+  zip_code: "12345",
+  phone_number: "(123) 456-7891",
+  specialty: "phone-repair",
+  is_admin: true
 )
+
 
 user1 = User.create!(
   email: "wesley@email.com",
@@ -25,8 +28,10 @@ user1 = User.create!(
   first_name: "Wesley",
   last_name: "Crusher",
   address: "444 Enterprise Lane",
-  zip_code: "12345",
-  state: "WA",
   city: "Seatle",
-  phone_number: "(123) 555-4444"
+  state: "WA",
+  zip_code: "12345",
+  phone_number: "(123) 555-4444",
+  specialty: '',
+  is_admin: false
 )

@@ -30,4 +30,40 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  #presence validations
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :zip_code, presence: true
+
+  #length validations
+  validates :phone_number, length: { minimum: 12 }
+
+  validate :user_is_admin_must_be_true_or_false
+  validate :user_specialty_presence_if_is_admin_is_true
+  
+  def full_name
+    first_name + " " + last_name
+  end
+
+  def user_is_admin_must_be_true_or_false
+    if [true, false].include? is_admin
+      
+    else
+      errors.add(:is_admin, "must be a boolean")
+    end
+  end
+
+  # if the user is an admin, then specialty must not be blank
+  def user_specialty_presence_if_is_admin_is_true
+    if is_admin == true
+      if specialty.blank?
+        errors.add(:specialty, "must be present")
+      end
+    end
+  end
+
 end
