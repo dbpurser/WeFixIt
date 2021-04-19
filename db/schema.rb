@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_04_18_020817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
+  create_table "devices", force: :cascade do |t|
+    t.string "deviceType"
+    t.string "model"
+    t.string "brand"
+    t.string "damage"
+    t.text "extra"
+    t.datetime "consultationAvailability"
+  end
   create_table "repairs", force: :cascade do |t|
     t.string "status"
     t.boolean "completed"
@@ -43,5 +53,5 @@ ActiveRecord::Schema.define(version: 2021_04_18_020817) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
+  
 end
