@@ -30,8 +30,33 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
 #one: {}
 # column: value
 #
 #two: {}
 # column: value
+
+one: 
+  email: sample1@email.com
+  first_name: John
+  last_name: Malkovich
+  address: 999 Malkovich Rd
+  city: Los Angeles
+  state: CA
+  zip_code: '90013'
+  phone_number: (213) 789-3333
+  specialty: phone-repair
+  is_admin: true
+
+two:
+  email: sample2@email.com
+  first_name: Craig
+  last_name: Schwartz
+  address: 333 Puppeteer Ln
+  city: Los Angeles
+  state: CA
+  zip_code: '90013'
+  phone_number: (213) 654-4444
+  specialty: nil
+  is_admin: false

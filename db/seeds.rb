@@ -17,6 +17,12 @@ admin1 = User.create!(
   state: "WA",
   city: "Seatle",
   phone_number: "(123) 456-7891"
+  city: "Seatle",
+  state: "WA",
+  zip_code: "12345",
+  phone_number: "(123) 456-7891",
+  specialty: "phone-repair",
+  is_admin: true
 )
 
 user1 = User.create!(
@@ -29,4 +35,10 @@ user1 = User.create!(
   state: "WA",
   city: "Seatle",
   phone_number: "(123) 555-4444"
+  city: "Seatle",
+  state: "WA",
+  zip_code: "12345",
+  phone_number: "(123) 555-4444",
+  specialty: '',
+  is_admin: false
 )
