@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_04_15_072046) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "devices", force: :cascade do |t|
     t.string "deviceType"
@@ -22,8 +25,12 @@ ActiveRecord::Schema.define(version: 2021_04_15_072046) do
     t.string "damage"
     t.text "extra"
     t.datetime "consultationAvailability"
+  end
+  create_table "repairs", force: :cascade do |t|
+    t.string "status"
+    t.boolean "completed"
+    t.string "specialist"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
 end
