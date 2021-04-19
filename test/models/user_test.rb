@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+
 #  address                :string
 #  city                   :string
 #  email                  :string           default(""), not null
@@ -28,10 +29,6 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-
-  # test "the truth" do
-  #   assert true
-  # end
 
 
   test "user fixtures are valid" do

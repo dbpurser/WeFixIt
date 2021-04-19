@@ -3,6 +3,13 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
+
 #  address                :string
 #  city                   :string
 #  email                  :string           default(""), not null
@@ -17,6 +24,7 @@
 #  specialty              :string
 #  state                  :string
 #  zip_code               :string
+
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
