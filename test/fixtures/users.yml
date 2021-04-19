@@ -33,6 +33,7 @@
 # below each fixture, per the syntax in the comments below
 #
 
+
 one: 
   email: sample1@email.com
   first_name: John

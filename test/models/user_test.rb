@@ -30,6 +30,7 @@ require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
 
+
   test "user fixtures are valid" do
     users.each do |user|
       assert user.valid?, user.errors.full_messages.inspect
