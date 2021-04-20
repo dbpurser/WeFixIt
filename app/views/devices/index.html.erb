@@ -1,4 +1,34 @@
-<h1>Devices</h1>
+<head>
 
-<p> you might or might not have some devices. we'll let you know in the next update
+<link rel="sylesheet" href="devices/new.css">
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+
+
+<body class="body">
+
+<h2 class="header2">Your Devices</h2>
+
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Device</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devices.each do |device| %>
+      <tr>
+        <td><%= device.deviceType %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<p>
+  <%= link_to 'home',nil, class: 'btn btn-outline-secondary' %>
 </p>
+
+</body>
