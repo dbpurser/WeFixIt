@@ -3,18 +3,27 @@
         background-color: grey;
       }
 
-      .header2{
+    .header2{
         border-radius: 5px;
-        background-color: lightblue;
+        border-color: #A67B5B;
+        background-color: powderblue;
         text-align: center;
         color: black;
         margin-bottom: 100px;
         border-style: solid;
+        border-width: 2mm;
         padding: 30px 0px;
       }
-  
-      .cancel_button{
-        margin-top: 20px;
+
+      .box{
+        border: solid;
+        border-radius: 5px;
+        border-color: powderblue;
+        border-width:3mm;
+        background-color: #A67B5B;
+        margin-left: auto; 
+        margin-right: auto;
+        padding-bottom: 0%;
       }
   
       input[type=text]:focus {
@@ -23,18 +32,63 @@
         border-style: solid;
         background-color: lightblue;
       }
-    
-      .box{
-        margin-top: 10px;
-        
-        
+
+      .level1,.level2{
+        float: left;
+        width: 33.33%;
+        padding: 20px;
       }
-  
-      .extra{
-          width: 245%;
-          
+
+      .more{
+        float: left;
+        width: 50%;
+        margin-left: 7%;
+        padding: 10px;
+        margin-right: 34px;
+        padding-right: 20px;
       }
-  
+
+      .date{
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+      }
+
       .submit{
+        padding-top: 15%;
+        padding: 2%;
+        text-align: center;
+      }
+
+      .cancel_button{
+        padding: 2%;
+        text-align: center;
+    }
+      
+      .row1:after {
+        content: "";
+        clear: both;
+      }
+
+      .row2:after {
+        content: "";
+        clear: both;
+      }
+      .row3:after {
+        content: "";
+        clear: both;
+      }
+
+      .row4:after {
+        content: "";
+        clear: both;
+      }
+      
+      .submit{
+        padding: 0px;
+        text-align: center;
+      }
+
+      .cancel_button{
         text-align: center;
       }
