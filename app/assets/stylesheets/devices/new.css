@@ -1,0 +1,44 @@
+
+    .body{
+        background-color: grey;
+      }
+
+      .header2{
+        border-radius: 5px;
+        background-color: lightblue;
+        text-align: center;
+        color: black;
+        margin-bottom: 100px;
+        border-style: solid;
+        padding: 30px 0px;
+      }
+  
+      .cancel_button{
+        margin-top: 20px;
+      }
+  
+      input[type=text]:focus {
+        border-radius: 5px;
+        color: black;
+        border-style: solid;
+        background-color: lightblue;
+      }
+      input[type=datetime]:focus {
+        color: white;
+        border-style: solid;
+        background-color: cyan;
+      }
+    
+      .box{
+        margin: auto;
+        border-collapse: separate;
+        border-spacing: 50px 75px;
+      }
+  
+      .extra{
+          width: 100%;
+      }
+  
+      .submit{
+        text-align: center;
+      }
