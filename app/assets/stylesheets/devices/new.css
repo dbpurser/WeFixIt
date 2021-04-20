@@ -25,9 +25,9 @@
       }
     
       .box{
-        margin: auto;
-        border-collapse: separate;
-        border-spacing: 50px 75px;
+        margin-top: 10px;
+        
+        
       }
   
       .extra{

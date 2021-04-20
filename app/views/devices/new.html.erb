@@ -12,13 +12,7 @@
 
 
 
-<script>
-    var types = ['Phone', 'Laptop']
-</script>
 
-<script>
-    document.write(types)
-</script>
 
 <%= bootstrap_form_with model: @device, method: :post, url: user_devices_path(@user), local: true do |f| %>
         <table class="box">
@@ -53,9 +47,7 @@
                 </div>
             </th>
         </tr>
-        <br>
-        <br>
-        <br>
+       
         <tr>
             <th>
                 <div class="date">
