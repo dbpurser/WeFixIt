@@ -18,8 +18,19 @@ ActiveRecord::Schema.define(version: 2021_04_20_000022) do
   create_table "consultations", force: :cascade do |t|
     t.text "description"
     t.date "date"
+  end
+  
+   create_table "devices", force: :cascade do |t|
+    t.string "deviceType"
+    t.string "model"
+    t.string "brand"
+    t.string "damage"
+    t.text "extra"
+    t.datetime "consultationAvailability"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_devices_on_user_id"
   end
 
   create_table "repairs", force: :cascade do |t|
@@ -30,4 +41,26 @@ ActiveRecord::Schema.define(version: 2021_04_20_000022) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "zip_code"
+    t.string "state"
+    t.string "city"
+    t.string "phone_number"
+    t.boolean "is_admin"
+    t.string "specialty"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "devices", "users"
 end
