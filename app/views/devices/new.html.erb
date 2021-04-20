@@ -1,0 +1,64 @@
+<head>
+
+<link rel="sylesheet" href="devices/new.css">
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+
+
+<body class="body">
+
+<h2 class="header2">Device Consultation Request Form </h2>
+
+
+
+
+
+<%= bootstrap_form_with model: @device, method: :post, url: user_devices_path(@user), local: true do |f| %>
+        
+    <div class="box">
+        <div class="row1">
+            <div class="level1">
+                <%= f.select :deviceType, @types %>
+            </div>
+            
+            <div class="level1">
+                <%= f.text_field :brand, required: true %>
+            </div>
+        
+            <div class="level1">
+                <%= f.text_field :model, required: true %>
+            </div>
+        </div>
+
+        <div class="row2">
+            <div class="level2">
+                <%= f.select :damage, @damage, required: true%>
+            </div>
+            
+            <div class="more">
+                <%= f.text_area :extra %>
+            </div>
+        </div>
+
+        <div class="row3">
+            <div class="date">
+                <%= f.datetime_field :consultationAvailability %>
+            </div>
+        </div>
+
+        <div class="row4">
+            <div class="submit">
+                <%= f.submit "submit form", class: 'btn btn-custom-color'%>
+            </div>
+
+            <div class='cancel_button'>
+                <%= link_to 'Cancel', nil, class: 'btn btn-secondary' %>
+            </div>
+        </div>
+    </div>
+
+    
+<% end %>
+
+</body>
