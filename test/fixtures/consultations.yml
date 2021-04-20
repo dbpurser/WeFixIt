@@ -12,9 +12,7 @@
 one:
   description: MyText
   date: 2021-04-17
-  device_id: 1
 
 two:
   description: MyText
   date: 2021-04-17
-  device_id: 1
