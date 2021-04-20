@@ -36,7 +36,10 @@
       }
   
       .extra{
-          width: 100%;
+          border-style: solid;
+          width: 245%;
+          
+          
       }
   
       .submit{

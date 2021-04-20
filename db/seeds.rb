@@ -69,3 +69,4 @@ device2 = Device.create!(
   consultationAvailability: "2021-04-23 02:20:00",
   user: user2
 )
+

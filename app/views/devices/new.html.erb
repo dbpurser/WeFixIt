@@ -20,12 +20,12 @@
     document.write(types)
 </script>
 
-<%= bootstrap_form_with model: @device, method: :post, url: 'pages#home', local: true do |f| %>
+<%= bootstrap_form_with model: @device, method: :post, url: user_devices_path(@user), local: true do |f| %>
         <table class="box">
         <tr>
             <th>
                 <div class="type">
-                    <%= f.select :device_type, @types %>
+                    <%= f.select :deviceType, @types %>
                 </div>
             </th>
             <th>
@@ -52,10 +52,14 @@
                     <%= f.text_field :extra%>
                 </div>
             </th>
-
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
             <th>
                 <div class="date">
-                    <%= f.datetime_field :consultation_availability %>
+                    <%= f.datetime_field :consultationAvailability %>
                 </div>
             </th>
         </tr>
