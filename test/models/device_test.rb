@@ -36,7 +36,48 @@
 require "test_helper"
 
 class DeviceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "fixtures are valid" do
+    devices.each do |device|
+      assert device.valid?, device.errors.full_messages.inspect
+    end
+  end
+
+  test "damage must be from list" do
+    device_one = devices(:one)
+    device_one.damage = 'glitter'
+    assert_not device_one.valid?
+  end
+
+  test "device type must be from list" do
+    device_one = devices(:one)
+    device_one.deviceType = 'pear'
+    assert_not device_one.valid?
+  end
+
+  test "brand must be present" do
+    device_one = devices(:one)
+    device_one.brand = ''
+    assert_not device_one.valid?
+  end
+
+  test "model must be present" do
+    device_one = devices(:one)
+    device_one.model = ''
+    assert_not device_one.valid?
+  end
+
+  test "extra must be present if damage is other" do
+    device_one = devices(:one)
+    device_one.damage = 'other'
+    device_one.model = ''
+    assert_not device_one.valid?
+  end
+
+  test "consultationAvailability must be present" do
+    device_one = devices(:one)
+    device_one.consultationAvailability = ''
+    assert_not device_one.valid?
+  end
+
 end

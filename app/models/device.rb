@@ -41,6 +41,7 @@ class Device < ApplicationRecord
         inverse_of: :devices,
     )
 
+
     has_many(
         :repairs,
         class_name: 'Repair',
@@ -48,5 +49,18 @@ class Device < ApplicationRecord
         inverse_of: :device,
         dependent: :destroy
     )
+  
+    validates :brand, presence: true
+    validates :damage, inclusion:{ in: ['broken screen', 'fried-hard-drive', 'laser-damage', 'explosion', 'spilled juice', 'other'] }
+    validates :deviceType, inclusion:{ in: ['phone', 'laptop']}
+    validates :model, presence: true
+    validates :consultationAvailability, presence: true
+    validate :extra_cannot_be_blank_if_damage_is_other
+
+    def extra_cannot_be_blank_if_damage_is_other
+        if damage == 'other' && extra.blank?
+            errors.add(:extra, "extra must be filled out if damage type is not on the list")
+        end
+    end
 
 end
