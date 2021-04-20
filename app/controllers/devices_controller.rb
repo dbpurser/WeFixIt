@@ -5,4 +5,8 @@ class DevicesController < ApplicationController
         @devices = @user.devices
         render :index
     end
+    def show
+        @devices = Device.find(params[:device_id])
+        render :show
+    end
 end
