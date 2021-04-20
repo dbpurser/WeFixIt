@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   
  
-  post 'users/:user_id/devices', to: 'devices#create'
+  post 'users/:user_id/devices', to: 'devices#create', as: 'user_devices'
   get 'users/:user_id/devices/new', to: 'devices#new', as: 'new_user_device'
 
 end

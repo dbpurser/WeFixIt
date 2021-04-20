@@ -23,11 +23,6 @@
         border-style: solid;
         background-color: lightblue;
       }
-      input[type=datetime]:focus {
-        color: white;
-        border-style: solid;
-        background-color: cyan;
-      }
     
       .box{
         margin: auto;
@@ -36,9 +31,7 @@
       }
   
       .extra{
-          border-style: solid;
           width: 245%;
-          
           
       }
   
