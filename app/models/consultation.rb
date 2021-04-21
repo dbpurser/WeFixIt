@@ -7,7 +7,6 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  device_id   :integer
 #
 class Consultation < ApplicationRecord
     # belongs_to :device

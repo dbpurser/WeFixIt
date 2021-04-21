@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2021_04_17_203141) do
   create_table "consultations", force: :cascade do |t|
     t.text "description"
     t.date "date"
-    t.integer "device_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
