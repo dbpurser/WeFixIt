@@ -46,45 +46,73 @@ go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
 
 <h2 class="header2">Welcome to We Fix It!</h2>
 
-    <ul class="box">
+    <div class="box">
 
         <% if user_signed_in? %>
             Hello, <%= current_user.full_name%>
-            <p></p>
-            <%= link_to 'Set up Consultation', new_user_device(@user), class: 'btn btn-primary btn-sm'%>
-            <p></p>
-            <%= link_to 'Look at devices submitted', user_devices_path, class: 'btn btn-primary btn-sm'%>
-            <p></p>
-            <%= link_to 'edit profile', edit_user_registration_path, class: 'btn btn-primary btn-sm'%>
-            <p></p>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' %>
-
+            
+            <p>
+                <%= link_to 'Set up Consultation', new_user_device_path(current_user), class: 'btn btn-primary btn-sm'%>
+            </p>
+            
+            <p>
+                <%= link_to 'Look at devices submitted', user_devices_path(current_user), class: 'btn btn-primary btn-sm'%>
+            </p>
+      
+            <p class="mt-4">
+                <%= link_to "View Profile", user_path(current_user) %>
+            </p>
+            
+            <p>
+                <%= link_to 'edit profile', edit_user_registration_path, class: 'btn btn-primary btn-sm'%>
+            </p>
+            
+            <p>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' %>
+            </p>
         <% else %>
+            
             <li>What is We Fix It?</li>
-            <p></p>
-            I'm glad you asked! We are a shop that fixes phones and laptop from a wide varity of damages.
-            We have top of the line experts that are able to fix just about anything!
-            <p></p>
-            <li>How can I set up an appointment?</li>
-            <p></p>
-            First we require you to sign up or be logged in that way you can fill out a form that tells us 
-            all about your device and to schedule a free consultation. Once submitted, you'll be able to keep track of your device and 
-            check how the repair is going or to check when your consultation date is.
-            <p></p>
-            <li>How can I sign up?</li>
-            <p></p>
-            Easy! Just click on the box below!
-            <p></p>
-            <div class="sign_up">
-                <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
-            </div>
-            <p></p>
-            Already signed up? Click below to sign in!
-            <p></p>
-            <div class="sign_in">
-                <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
-            </div>
-
+            
+            <p>
+                I'm glad you asked! We are a shop that fixes phones and laptop from a wide varity of damages.
+                We have top of the line experts that are able to fix just about anything!
+            </p>
+           
+            <p>
+                <li>How can I set up an appointment?</li>
+            </p>
+           
+            <p>
+                First we require you to sign up or be logged in that way you can fill out a form that tells us 
+                all about your device and to schedule a free consultation. Once submitted, you'll be able to keep track of your device and 
+                check how the repair is going or to check when your consultation date is.
+            </p>
+            
+            <p>
+                <li>How can I sign up?</li>
+            </p>
+            
+            <p>
+                Easy! Just click on the box below!
+            </p>
+            
+            <p>
+                <div class="sign_up">
+                    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
+                </div>
+            </p>
+            
+            <p>
+                Already signed up? Click below to sign in!
+            </p>
+            
+            <p>
+                <div class="sign_in">
+                    <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
+                </div>
+            </p>
         <% end %>
         
-    </p>
+    </div>
+        
