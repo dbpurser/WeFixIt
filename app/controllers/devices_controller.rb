@@ -6,6 +6,11 @@ class DevicesController < ApplicationController
         render :index
     end
 
+    def show
+        @devices = Device.find(params[:device_id])
+        render :show
+    end
+
     def create
         @user = User.find(params[:user_id])
         @device = @user.devices.build(params.require(:device).permit(:deviceType, :brand, :model, :damage, :extra, :consultationAvailability))
