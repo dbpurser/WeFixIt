@@ -46,10 +46,10 @@
             <tr>
                 <td> <%= device.brand %> <%= device.model %></td>
                 <td class="text-nowrap">
-                    <%= link_to 'show', nil, class: 'btn btn-dark btn-sm' %>
+                    <%= link_to 'show', user_device(@user, device), class: 'btn btn-dark btn-sm' %>
                     <% if @user.is_admin == true %>
-                        <%= link_to 'edit', nil, class: 'btn btn-dark btn-sm' %>
-                        <%= link_to 'destroy',nil, class: 'btn btn-dark btn-sm' %>
+                        <%= link_to 'edit', edit_user_device(@user, device), class: 'btn btn-dark btn-sm' %>
+                        <%= link_to 'destroy',user_device(@user, device), method: :delete, class: 'btn btn-dark btn-sm' %>
                     <% end %>
                 </td>
             </tr>
@@ -58,11 +58,11 @@
 
 </table>
 <p>
-  <%= link_to "New Device", nil, class: "btn btn-dark"%>
+  <%= link_to "New Device", new_user_device(@user), class: "btn btn-dark"%>
 </p>
 
 <p>
-  <%= link_to 'Home',nil, class: "btn btn-dark" %>
+  <%= link_to 'Home',home_path, class: "btn btn-dark" %>
 </p>
 
 </body>
