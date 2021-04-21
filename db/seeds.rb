@@ -57,8 +57,37 @@ user2 = User.create!(
   is_admin: false
 )
 
+
+user3 = User.create!(
+  email: "billy@email.com",
+  password: "password",
+  first_name: "Billy",
+  last_name: "Baker",
+  address: "888 Lane Rd",
+  city: "Memphis",
+  state: "TN",
+  zip_code: "38803",
+  phone_number: "(930) 655-1234",
+  specialty: '',
+  is_admin: false
+)
+
+user4 = User.create!(
+  email: "spock@email.com",
+  password: "password",
+  first_name: "Spock",
+  last_name: "Vulcan",
+  address: "456 Final Frontier Rd",
+  city: "Space",
+  state: "WA",
+  zip_code: "38803",
+  phone_number: "(930) 655-1234",
+  specialty: '',
+  is_admin: false
+)
+
 device1 = Device.create!(
-  deviceType: "Phone",
+  deviceType: "phone",
   brand: "Apple",
   model: "iPhone SE",
   damage: "other",
@@ -68,10 +97,10 @@ device1 = Device.create!(
 )
 
 device2 = Device.create!(
-  deviceType: "Laptop",
+  deviceType: "laptop",
   brand: "Lenovo",
   model: "ThinkPad",
-  damage: "spilled-juice",
+  damage: "spilled juice",
   extra: "My daughter, Eleven, spilled some juice on my laptop, can you fix it?",
   consultationAvailability: "2021-04-23 02:20:00",
   user: user2
