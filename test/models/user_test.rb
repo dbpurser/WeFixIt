@@ -106,11 +106,11 @@ class UserTest < ActiveSupport::TestCase
   ## pretty much just a glorified presence validations, 
   ## will become useless if we change to a 2 devise User
   ## solution (admin and customer individual devise classes)
-  test "User is_admin must be true or false" do
-    user1 = users(:one)
-    user1.is_admin = ''
-    assert_not user1.valid?
-  end
+  # test "User is_admin must be true or false" do
+  #   user1 = users(:one)
+  #   user1.is_admin = ''
+  #   assert_not user1.valid?
+  # end
 
   test "User specialty presence if is_admin is true" do
     user1 = users(:one)

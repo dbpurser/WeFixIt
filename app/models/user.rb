@@ -82,7 +82,7 @@ class User < ApplicationRecord
   #length validations
   validates :phone_number, length: { minimum: 12 }
 
-  validate :user_is_admin_must_be_true_or_false
+  # validate :user_is_admin_must_be_true_or_false
   validate :user_specialty_presence_if_is_admin_is_true
   
   def full_name
