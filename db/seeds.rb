@@ -50,6 +50,35 @@ user2 = User.create!(
   is_admin: false
 )
 
+
+user3 = User.create!(
+  email: "billy@email.com",
+  password: "password",
+  first_name: "Billy",
+  last_name: "Baker",
+  address: "888 Lane Rd",
+  city: "Memphis",
+  state: "TN",
+  zip_code: "38803",
+  phone_number: "(930) 655-1234",
+  specialty: '',
+  is_admin: false
+)
+
+user4 = User.create!(
+  email: "spock@email.com",
+  password: "password",
+  first_name: "Spock",
+  last_name: "Vulcan",
+  address: "456 Final Rd",
+  city: "Space",
+  state: "WA",
+  zip_code: "38803",
+  phone_number: "(930) 655-1234",
+  specialty: '',
+  is_admin: false
+)
+
 device1 = Device.create!(
   deviceType: "phone",
   brand: "Apple",
