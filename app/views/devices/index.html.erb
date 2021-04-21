@@ -46,9 +46,9 @@
             <tr>
                 <td> <%= device.brand %> <%= device.model %></td>
                 <td class="text-nowrap">
-                    <%= link_to 'show', user_device_show_path(@user, device), class: 'btn btn-dark btn-sm' %>
+                    <%= link_to 'show', user_devices_show_path(@user, device), class: 'btn btn-dark btn-sm' %>
                     <% if @user.is_admin == true %>
-                        <%= link_to 'edit', edit_user_device(@user, device), class: 'btn btn-dark btn-sm' %>
+                        <%= link_to 'edit', nil, class: 'btn btn-dark btn-sm' %>
                         <%= link_to 'destroy',nil, method: :delete, class: 'btn btn-dark btn-sm' %>
                     <% end %>
                 </td>
@@ -58,7 +58,7 @@
 
 </table>
 <p>
-  <%= link_to "New Device", new_user_device(@user), class: "btn btn-dark"%>
+  <%= link_to "New Device", new_user_device_path(@user), class: "btn btn-dark"%>
 </p>
 
 <p>
