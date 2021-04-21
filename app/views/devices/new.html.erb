@@ -1,0 +1,79 @@
+<head>
+
+<link rel="sylesheet" href="devices/new.css">
+
+
+</head>
+
+
+<body class="body">
+<div class="header1">
+    <p class=text>We Fix It</p>
+</div>
+
+<p class="home">
+    <%= link_to 'home', home_path, class: 'btn btn-custom-color'%>
+</p>
+
+<p class="profile">
+    <%= link_to 'profile', nil, class: 'btn btn-custom-color'%>
+</p>
+
+<h2 class="header2">Device Consultation Request Form </h2>
+
+
+
+
+<% types = Array['select','phone', 'laptop'] %>
+<% damage = Array['select','spilled juice', 'explosion', 'fried-hard-drive', 'other'] %>
+
+<%= bootstrap_form_with model: @device, method: :post, url: user_devices_path(@user), local: true do |f| %>
+    
+    <div class="box">
+        <div class="t-head">
+        </div>
+        <div class="row1">
+            <div class="level1">
+                <%= f.select :deviceType, types, required: true %>
+            </div>
+            
+            <div class="level1">
+                <%= f.text_field :brand %>
+            </div>
+        
+            <div class="level1">
+                <%= f.text_field :model %>
+            </div>
+        </div>
+
+        <div class="row2">
+            <div class="level2">
+                <%= f.select :damage, damage, required: true%>
+            </div>
+            
+            <div class="extra">
+                <%= f.text_area :extra %>
+            </div>
+        </div>
+
+        <div class="row3">
+            <div class="date">
+                <%= f.datetime_field :consultationAvailability %>
+            </div>
+        </div>
+
+        <div class="row4">
+            <div class="submit">
+                <%= f.submit "submit form", class: 'btn btn-custom-color'%>
+            </div>
+
+            <div class='cancel_button'>
+                <%= link_to 'Cancel', nil, class: 'btn btn-secondary' %>
+            </div>
+        </div>
+    </div>
+
+    
+<% end %>
+
+</body>

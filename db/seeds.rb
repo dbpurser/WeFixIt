@@ -51,7 +51,7 @@ user2 = User.create!(
 )
 
 device1 = Device.create!(
-  deviceType: "Phone",
+  deviceType: "phone",
   brand: "Apple",
   model: "iPhone SE",
   damage: "other",
@@ -61,11 +61,12 @@ device1 = Device.create!(
 )
 
 device2 = Device.create!(
-  deviceType: "Laptop",
+  deviceType: "laptop",
   brand: "Lenovo",
   model: "ThinkPad",
-  damage: "spilled-juice",
+  damage: "spilled juice",
   extra: "My daughter, Eleven, spilled some juice on my laptop, can you fix it?",
   consultationAvailability: "2021-04-23 02:20:00",
   user: user2
 )
+
