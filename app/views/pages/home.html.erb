@@ -12,37 +12,107 @@ go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
     the names within the <style>...</style> section to add css to those blocks-->
 
 <style>
+     .body{
+        background-color: grey;
+      }
 
-.sign_in{
-    padding: 10px;
-    text-align: center;
-}
+    .header2{
+        border-radius: 5px;
+        border-color: white;
+        background-color: #A67B5B;
+        text-align: center;
+        color: black;
+        margin-bottom: 100px;
+        border-style: solid;
+        border-width: 2mm;
+        padding: 30px 0px;
+      }
 
+      .box{
+        border: solid;
+        border-radius: 5px;
+        border-color: white;
+        border-width:3mm;
+        background-color: #A67B5B;
+        margin-left: auto; 
+        margin-right: auto;
+        padding: 100px;
+      }
 </style>
+<head>
+</head>
 
-<h1 class="my-4">We Fix It!</h1>
+<body class="body">
 
-    <div class="authentication_block">
-        <p>
+<h2 class="header2">Welcome to We Fix It!</h2>
+
+    <div class="box">
+
+        <% if user_signed_in? %>
+            Hello, <%= current_user.full_name%>
             
-            <% if user_signed_in? %>
-                <div class="greeting">
-
-                    Hello, <%= current_user.email%> <%= link_to 'edit profile', edit_user_registration_path%>
-                </div>
-
-                <div class="sign_out">
-                    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' %>
-                </div>
-            <% else %>
-                <div class="sign_in">
-                    <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
-                </div>
-
+            <p>
+                <%= link_to 'Set up Consultation', new_user_device_path(current_user), class: 'btn btn-primary btn-sm'%>
+            </p>
+            
+            <p>
+                <%= link_to 'Look at devices submitted', user_devices_path(current_user), class: 'btn btn-primary btn-sm'%>
+            </p>
+      
+            <p class="mt-4">
+                <%= link_to "View Profile", user_path(current_user) %>
+            </p>
+            
+            <p>
+                <%= link_to 'edit profile', edit_user_registration_path, class: 'btn btn-primary btn-sm'%>
+            </p>
+            
+            <p>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' %>
+            </p>
+        <% else %>
+            
+            <li>What is We Fix It?</li>
+            
+            <p>
+                I'm glad you asked! We are a shop that fixes phones and laptop from a wide varity of damages.
+                We have top of the line experts that are able to fix just about anything!
+            </p>
+           
+            <p>
+                <li>How can I set up an appointment?</li>
+            </p>
+           
+            <p>
+                First we require you to sign up or be logged in that way you can fill out a form that tells us 
+                all about your device and to schedule a free consultation. Once submitted, you'll be able to keep track of your device and 
+                check how the repair is going or to check when your consultation date is.
+            </p>
+            
+            <p>
+                <li>How can I sign up?</li>
+            </p>
+            
+            <p>
+                Easy! Just click on the box below!
+            </p>
+            
+            <p>
                 <div class="sign_up">
                     <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
                 </div>
-            <% end %>
+            </p>
+            
+            <p>
+                Already signed up? Click below to sign in!
+            </p>
+            
+            <p>
+                <div class="sign_in">
+                    <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
+                </div>
+            </p>
+        <% end %>
         
-        </p>
     </div>
+        

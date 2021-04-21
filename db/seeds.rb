@@ -70,7 +70,7 @@ user4 = User.create!(
   password: "password",
   first_name: "Spock",
   last_name: "Vulcan",
-  address: "456 Final Rd",
+  address: "456 Final Frontier Rd",
   city: "Space",
   state: "WA",
   zip_code: "38803",
