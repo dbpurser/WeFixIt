@@ -51,9 +51,9 @@ go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
         <% if user_signed_in? %>
             Hello, <%= current_user.full_name%>
             <p></p>
-            <%= link_to 'Set up Consultation', nil, class: 'btn btn-primary btn-sm'%>
+            <%= link_to 'Set up Consultation', new_user_device(@user), class: 'btn btn-primary btn-sm'%>
             <p></p>
-            <%= link_to 'Look at devices submitted', nil, class: 'btn btn-primary btn-sm'%>
+            <%= link_to 'Look at devices submitted', user_devices_path, class: 'btn btn-primary btn-sm'%>
             <p></p>
             <%= link_to 'edit profile', edit_user_registration_path, class: 'btn btn-primary btn-sm'%>
             <p></p>
