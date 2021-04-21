@@ -24,4 +24,5 @@ class DevicesController < ApplicationController
         @device = Device.new
         render :new
     end
+
 end
