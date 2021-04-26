@@ -53,17 +53,7 @@
 
 
 <p>
-<br>
-  <% if current_user.is_admin == true %>
-    <p>
-      <%= link_to "Back", user_devices_path, class: "btn btn-dark" %>
-    </p>
-  <% end %>
-  <% if current_user.is_admin == false %>
-    <p>
-      <%= link_to 'Back', user_devices_path(current_user), class: "btn btn-dark" %>
-    </p>
-  <% end %>
+  <%= link_to 'Back', :back, class: "btn btn-dark" %>
 </p>
 
 </body>

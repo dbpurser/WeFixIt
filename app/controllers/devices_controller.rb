@@ -30,4 +30,12 @@ class DevicesController < ApplicationController
         render :new
     end
 
+    def destroy
+        @user = User.find(params[:user_id])
+        @device = @user.devices.find(params[:device_id])
+        @device.destroy
+        flash[:success] = "Device was successfully destroyed."
+        redirect_to user_devices_url(@user)
+    end
+
 end

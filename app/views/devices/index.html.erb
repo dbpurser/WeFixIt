@@ -49,7 +49,7 @@
                     <%= link_to 'show', user_devices_show_path(@user, device), class: 'btn btn-dark btn-sm' %>
                     <% if current_user.is_admin == true %>
                         <%= link_to 'edit', nil, class: 'btn btn-dark btn-sm' %>
-                        <%= link_to 'delete',user_devices_path(@user, device), method: :delete, class: 'btn btn-dark btn-sm' %>
+                        <%= link_to 'delete',user_devices_show_path(@user, device), method: :delete, class: 'btn btn-dark btn-sm' %>
                     <% end %>
                 </td>
             </tr>
