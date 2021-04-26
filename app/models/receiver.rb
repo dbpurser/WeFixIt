@@ -23,4 +23,12 @@ class Receiver < ApplicationRecord
         foreign_key: 'user_id',
         inverse_of: :receiver
     )
+
+    has_many(
+        :messages,
+        class_name: 'Message',
+        foreign_key: 'receiver_id',
+        inverse_of: :receiver,
+        dependent: :destroy
+      )
 end

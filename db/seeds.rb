@@ -105,3 +105,13 @@ device2 = Device.create!(
   consultationAvailability: "2021-04-23 02:20:00",
   user: user2
 )
+
+#receiver1_m1 = Message.create!(
+#  message: "Hello mate!",
+#  receiver: receiver1
+#)
+
+#receiver1_m2 = Message.create!(
+#  message: "Long time no talk!",
+#  receiver: receiver1
+#)
