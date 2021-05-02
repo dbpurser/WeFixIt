@@ -1,0 +1,81 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :bigint           not null, primary key
+#  address                :string
+#  city                   :string
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  first_name             :string
+#  is_admin               :boolean
+#  last_name              :string
+#  phone_number           :string
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
+#  specialty              :string
+#  state                  :string
+#  zip_code               :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
+
+#  address                :string
+#  city                   :string
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  first_name             :string
+#  is_admin               :boolean
+#  last_name              :string
+#  phone_number           :string
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
+#  specialty              :string
+#  state                  :string
+#  zip_code               :string
+
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+
+one: 
+  email: sample1@email.com
+  first_name: John
+  last_name: Malkovich
+  address: 999 Malkovich Rd
+  city: Los Angeles
+  state: CA
+  zip_code: '90013'
+  phone_number: (213) 789-3333
+  specialty: phone-repair
+  is_admin: true
+
+two:
+  email: sample2@email.com
+  first_name: Craig
+  last_name: Schwartz
+  address: 333 Puppeteer Ln
+  city: Los Angeles
+  state: CA
+  zip_code: '90013'
+  phone_number: (213) 654-4444
+  specialty: nil
+  is_admin: false
