@@ -1,33 +1,73 @@
-<% if user_signed_in? %>
-    <div class="greeting">
-        Hello, <%= current_user.email%> <%= link_to 'edit profile', edit_user_registration_path%>
-    </div>
+<style>
+     .body{
+        background-color: grey;
+      }
 
-    <div class="sign_out">
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' %>
-    </div>
-<% else %>
-    <div class="sign_in">
-        <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
-    </div>
+    .header2{
+        border-radius: 5px;
+        border-color: white;
+        background-color: #A67B5B;
+        text-align: center;
+        color: black;
+        margin-bottom: 100px;
+        border-style: solid;
+        border-width: 2mm;
+        padding: 30px 0px;
+      }
 
-    <div class="sign_up">
-        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
-    </div>
-<% end %>
-
-<h1>Profile</h1>
-
-<p>
+      .box{
+        border: solid;
+        border-radius: 5px;
+        border-color: white;
+        border-width:3mm;
+        background-color: #A67B5B;
+        margin-left: auto; 
+        margin-right: auto;
+        padding: 100px;
+      }
+      .paragraph{
+        border-radius: 5px;
+        border-color: white;
+        background-color: #A67B5B;
+        text-align: center;
+        color: black;
+        margin-bottom: 100px;
+        border-style: solid;
+        border-width: 2mm;
+        padding: 30px 0px;
+</style>
+<body class = "body">
     <% if user_signed_in? %>
-        Email: <%= @user.email %> <br>
-        First Name: <%= @user.first_name %><br>
-        Last name: <%= @user.last_name %><br>
-        Address: <%= @user.address %><br>
-        City: <%= @user.city %><br>
-        State: <%= @user.state %><br>
-        Zip: <%= @user.zip_code %><br>
-        Phone: <%= @user.phone_number %> <br>
+        <div class="greeting">
+            Hello, <%= current_user.email%> <%= link_to 'edit profile', edit_user_registration_path%>
+        </div>
+
+        <div class="sign_out">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' %>
+        </div>
+    <% else %>
+        <div class="sign_in">
+            <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+        <div class="sign_up">
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
+        </div>
     <% end %>
 
-</p>
+    <h1 class = "header2">Profile</h1>
+
+    <p class = paragraph>
+        <% if user_signed_in? %>
+            Email: <%= @user.email %> <br>
+            First Name: <%= @user.first_name %><br>
+            Last name: <%= @user.last_name %><br>
+            Address: <%= @user.address %><br>
+            City: <%= @user.city %><br>
+            State: <%= @user.state %><br>
+            Zip: <%= @user.zip_code %><br>
+            Phone: <%= @user.phone_number %> <br>
+        <% end %>
+
+    </p>
+</body>
