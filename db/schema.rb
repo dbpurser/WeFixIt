@@ -51,6 +51,12 @@ ActiveRecord::Schema.define(version: 2021_05_06_065804) do
     t.index ["device_id"], name: "index_repairs_on_device_id"
   end
 
+  create_table "senders", force: :cascade do |t|
+    t.string "sender_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
