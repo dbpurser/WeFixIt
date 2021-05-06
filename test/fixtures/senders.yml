@@ -16,13 +16,9 @@
 #  fk_rails_...  (user_id => users.id)
 #
 
-<<<<<<< HEAD
 one: {}
 # column: value
 #
 two: {}
 # column: value
-=======
 
-  
->>>>>>> main

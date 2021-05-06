@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_05_06_094232) do
-=======
-ActiveRecord::Schema.define(version: 2021_05_06_065805) do
-
->>>>>>> main
+ActiveRecord::Schema.define(version: 2021_05_06_204444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,11 +36,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_065805) do
   end
 
   create_table "messages", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string "content"
-=======
     t.text "content"
->>>>>>> main
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -56,17 +47,11 @@ ActiveRecord::Schema.define(version: 2021_05_06_065805) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-<<<<<<< HEAD
-  create_table "recievers", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_recievers_on_user_id"
-=======
   create_table "receivers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
->>>>>>> main
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_receivers_on_user_id"
   end
 
   create_table "repairs", force: :cascade do |t|
@@ -108,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_065805) do
   end
 
   add_foreign_key "devices", "users"
-  add_foreign_key "recievers", "users"
+  add_foreign_key "receivers", "users"
   add_foreign_key "repairs", "devices"
   add_foreign_key "senders", "users"
 end
