@@ -23,4 +23,18 @@ class Receiver < ApplicationRecord
         foreign_key: 'user_id',
         inverse_of: :receiver
     )
+
+    def first_name
+        user.first_name
+    end
+
+    def user_name
+        email_container = Mail::Address.new
+        email_container.address = user.email
+        email_container.local
+    end
+
+    def email
+        user.email
+    end
 end
