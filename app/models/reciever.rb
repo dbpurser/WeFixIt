@@ -23,10 +23,7 @@ class Reciever < ApplicationRecord
         foreign_key: 'user_id',
         inverse_of: :reciever
     )
-
-
-
-
+    
     def first_name
         user.first_name
     end

@@ -69,6 +69,7 @@ class User < ApplicationRecord
     inverse_of: :user,
     dependent: :destroy
   )
+  
 
   has_one(
     :reciever,
