@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'home', to: 'pages#home', as: 'home'
   get 'user/:id', to: 'user#show', as: 'user'
+  get 'users', to: 'user#cuslist', as: 'user_list'
   
 
   get 'users/:user_id/devices', to: 'devices#index', as: 'user_devices'
