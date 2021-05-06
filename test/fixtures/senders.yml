@@ -16,8 +16,5 @@
 #  fk_rails_...  (user_id => users.id)
 #
 
-one:
-  sender_id: MyString
 
-two:
-  sender_id: MyString
+  
