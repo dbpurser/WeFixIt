@@ -70,13 +70,6 @@ class User < ApplicationRecord
     dependent: :destroy
   )
 
-  has_one(
-    :reciever,
-    class_name: 'Reciever',
-    foreign_key: 'user_id',
-    inverse_of: :user,
-    dependent: :destroy
-  )
 
   #presence validations
   validates :first_name, presence: true
