@@ -19,14 +19,7 @@
 <h1>Profile</h1>
 
 <p>
-    <% if user_signed_in? and @user.is_admin == true %>
-        <p>
-        <%= link_to "Customer list", user_list_path, class: 'btn btn-primary btn-sm' %>
-        </p>
-
-    <% end %>
-
-    <% if user_signed_in? and not @user.is_admin == true%>
+    <% if user_signed_in?%>
         Email: <%= @user.email %> <br>
         First Name: <%= @user.first_name %><br>
         Last name: <%= @user.last_name %><br>

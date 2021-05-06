@@ -47,9 +47,15 @@ go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
 <h2 class="header2">Welcome to We Fix It!</h2>
 
     <div class="box">
-
+        
         <% if user_signed_in? %>
             Hello, <%= current_user.full_name%>
+            <% if current_user.is_admin == true %>
+                <p>
+                <%= link_to "Customer list", user_list_path, class: 'btn btn-primary btn-sm' %>
+                </p>
+
+            <% end %>
             
             <p>
                 <%= link_to 'Set up Consultation', new_user_device_path(current_user), class: 'btn btn-primary btn-sm'%>
