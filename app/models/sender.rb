@@ -16,8 +16,6 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Sender < ApplicationRecord
-<<<<<<< HEAD
-=======
 
     belongs_to(
         :user,
@@ -26,5 +24,4 @@ class Sender < ApplicationRecord
         inverse_of: :sender
     )
     
->>>>>>> main
 end

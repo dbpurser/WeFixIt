@@ -76,9 +76,6 @@ class User < ApplicationRecord
     inverse_of: :user,
     dependent: :destroy
   )
-<<<<<<< HEAD
-
-=======
   
   has_one(
     :receiver,
@@ -87,7 +84,6 @@ class User < ApplicationRecord
     inverse_of: :user,
     dependent: :destroy
   )
->>>>>>> main
 
   #presence validations
   validates :first_name, presence: true
