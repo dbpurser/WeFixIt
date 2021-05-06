@@ -63,4 +63,27 @@ class Device < ApplicationRecord
         end
     end
 
+    COSTS = {
+    'phone' => {
+      'broken screen' => 10,
+      'spilled juice' => 12,
+      'explosion' => 14,
+      'other' => 100,
+      'laser-damage' => 10000,
+    },
+    'laptop' => {
+      'broken screen' => 15,
+      'explosion' => 12,
+      'fried-hard-drive' => 16,
+      'laser-damage' => 10001,
+      'spilled juice' => 13,
+      'other' => 101,
+    }
+  }  
+  
+  def estimated_repair_cost
+    COSTS[deviceType][damage]
+  end
+  
+
 end
