@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   get 'users/:user_id/devices/new', to: 'devices#new', as: 'new_user_device'
   get 'users/:user_id/devices/:device_id', to: 'devices#show', as: 'user_devices_show'
 
+
+  get 'users/:user_id/inbox', to: 'messages#index', as: 'user_inbox'
+  get 'users/:user_id/outbox', to: 'messages#outbox', as: 'user_outbox'
 end

@@ -1,0 +1,96 @@
+<h1>Messages Recieved</h1>
+<div class="menu">
+    <p>
+        <%= link_to "inbox", user_inbox_path(current_user)%>
+    </p>
+
+    <p>
+        <%= link_to "outbox", user_outbox_path(current_user)%>
+    </p>
+</div>
+
+<% if @inbox==true%>
+    <% if @messages_recieved=="no messages recieved"%>
+        <table class="table table-striped table-hover">
+
+        <thead class="thead-dark">
+            <tr>
+            <th>sent from</th>
+            <th>message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
+        </tbody>
+
+        </table>
+    <% else %>
+        <table class="table table-striped table-hover">
+
+        <thead class="thead-dark">
+            <tr>
+            <th>sent from</th>
+            <th>message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                <% @messages_recieved.each do |message| %>
+                <tr>
+                    <td><%= message.sender_user_name %></td>
+                    <td><%= message.content %></td>
+                </tr>
+                <% end %>
+        </tbody>
+
+        </table>
+    <%end%>
+
+<%else%>
+    <% if @messages_sent=="no messages sent"%>
+        <table class="table table-striped table-hover">
+
+        <thead class="thead-dark">
+            <tr>
+            <th>sender email</th>
+            <th>sender name</th>
+            <th>message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
+        </tbody>
+
+        </table>
+    <% else %>
+        <table class="table table-striped table-hover">
+
+        <thead class="thead-dark">
+            <tr>
+            <th>sent to</th>
+            <th>message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                <% @messages_sent.each do |message| %>
+                <tr>
+                    <td><%= message.reciever_user_name %></td>
+                    <td><%= message.content %></td>
+                </tr>
+                <% end %>
+        </tbody>
+
+        </table>
+    <%end%>
+<% end %>
+<%= link_to 'profile', user_path(current_user)%>
