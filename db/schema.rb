@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2021_05_06_090659) do
   end
 
   create_table "senders", force: :cascade do |t|
-    t.string "sender_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
