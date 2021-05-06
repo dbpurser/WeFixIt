@@ -29,10 +29,10 @@ class Message < ApplicationRecord
     end
 
     def sender_user_name
-        sender.grab_user_name
+        sender.user_name
     end
 
     def reciever_user_name
-        reciever.grab_user_name
+        reciever.user_name
     end
 end

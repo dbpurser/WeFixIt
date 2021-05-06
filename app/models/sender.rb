@@ -15,9 +15,13 @@ class Sender < ApplicationRecord
         user.first_name
     end
 
-    def grab_user_name
+    def user_name
         email_container = Mail::Address.new
         email_container.address = user.email
         email_container.local
+    end
+
+    def email
+        user.email
     end
 end
