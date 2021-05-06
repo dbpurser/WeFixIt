@@ -36,6 +36,7 @@
         border-width: 2mm;
         padding: 30px 0px;
 </style>
+<h1 class = "header2">Profile</h1>
 <body class = "body">
     <% if user_signed_in? %>
         <div class="greeting">
@@ -49,13 +50,9 @@
         <div class="sign_in">
             <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
         </div>
-
-        <div class="sign_up">
+         <div class="sign_up">
             <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
         </div>
-    <% end %>
-
-    <h1 class = "header2">Profile</h1>
 
     <p class = paragraph>
         <% if user_signed_in? %>
