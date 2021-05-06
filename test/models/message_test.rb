@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: senders
+# Table name: messages
 #
 #  id         :bigint           not null, primary key
+#  content    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  sender_id  :string
 #
+require "test_helper"
 
-one: {}
-# column: value
-#
-two: {}
-# column: value
+class MessageTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
