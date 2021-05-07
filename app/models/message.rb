@@ -19,9 +19,9 @@
 class Message < ApplicationRecord
 
     belongs_to(
-        :receiver,
-        class_name: 'Receiver',
-        foreign_key: 'receiver_id',
+        :sender,
+        class_name: 'Sender',
+        foreign_key: 'sender_id',
         inverse_of: :messages
       )
 
