@@ -106,12 +106,48 @@ device2 = Device.create!(
   user: user2
 )
 
-#receiver1_m1 = Message.create!(
-#  message: "Hello mate!",
-#  receiver: receiver1
-#)
+sender0 = Sender.create!(
+  user: admin1
+)
 
-#receiver1_m2 = Message.create!(
-#  message: "Long time no talk!",
-#  receiver: receiver1
-#)
+sender1 = Sender.create!(
+  user: user1
+)
+
+sender2 = Sender.create!(
+  user: user2
+)
+
+sender3 = Sender.create!(
+  user: user3
+)
+
+sender4 = Sender.create!(
+  user: user4
+)
+
+receiver0 = Receiver.create!(
+  user: admin1
+)
+
+receiver1 = Receiver.create!(
+  user: user1
+)
+
+receiver2 = Receiver.create!(
+  user: user2
+)
+
+receiver3 = Receiver.create!(
+  user: user3
+)
+
+receiver4 = Receiver.create!(
+  user: user4
+)
+
+message0 = Message.create!(
+  receiver: receiver1,
+  sender: sender0,
+  content: "Hello wesley, are you ready for the meet saturday?"
+)

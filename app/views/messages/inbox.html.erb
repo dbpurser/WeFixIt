@@ -1,0 +1,110 @@
+<style>
+    .box{
+        border: solid;
+        border-radius: 5px;
+        border-color: white;
+        border-width:3mm;
+        background-color: #A67B5B;
+        margin-left: auto; 
+        margin-right: auto;
+        padding: 100px;
+      }
+</style>
+
+
+<h1>Messages Recieved</h1>
+<div class="menu">
+    <p>
+        <%= link_to "inbox", user_inbox_path(current_user), class: 'btn btn-custom-color'%>
+    </p>
+
+    <p>
+        <%= link_to "outbox", user_outbox_path(current_user), class: 'btn btn-custom-color'%>
+    </p>
+</div>
+
+<% if @inbox==true%>
+    <% if @messages_received=="no messages received"%>
+        <table class="table table-striped table-hover">
+
+        <thead class="box table thead-dark">
+            <tr>
+            <th>sent from</th>
+            <th>message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
+        </tbody>
+
+        </table>
+    <% else %>
+        <table class="table table-striped table-hover">
+
+        <thead class="box table thead-dark">
+            <tr>
+            <th>sent from</th>
+            <th>message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                <% @messages_received.each do |message| %>
+                <tr>
+                    <td><%= message.sender_user_name %></td>
+                    <td><%= message.content %></td>
+                </tr>
+                <% end %>
+        </tbody>
+
+        </table>
+    <%end%>
+
+<%else%>
+    <% if @messages_sent=="no messages sent"%>
+        <table class="table table-striped table-hover">
+
+        <thead class="box table thead-dark">
+            <tr>
+            <th>sender email</th>
+            <th>sender name</th>
+            <th>message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
+        </tbody>
+
+        </table>
+    <% else %>
+        <table class="table table-striped table-hover">
+
+        <thead class="box table thead-dark">
+            <tr>
+            <th>sent to</th>
+            <th>message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                <% @messages_sent.each do |message| %>
+                <tr>
+                    <td><%= message.receiver_user_name %></td>
+                    <td><%= message.content %></td>
+                </tr>
+                <% end %>
+        </tbody>
+
+        </table>
+    <%end%>
+<% end %>
+<%= link_to 'profile', user_path(current_user)%>

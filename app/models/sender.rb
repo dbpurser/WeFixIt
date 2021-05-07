@@ -45,4 +45,5 @@ class Sender < ApplicationRecord
     def email
         user.email
     end
+
 end
