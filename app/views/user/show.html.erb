@@ -56,6 +56,8 @@
 
             <% if current_user.is_admin == true %>
                 <%= link_to "Customer Registry", user_list_path, class: 'btn btn-custom-color' %>
+            <% else %>
+                <%= link_to 'Look at devices submitted', user_devices_path(current_user), class: 'btn btn-custom-color'%>
             <% end %>
         <% end %>
 
