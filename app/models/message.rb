@@ -40,7 +40,7 @@ class Message < ApplicationRecord
     end
 
     def receiver_name
-        reciever.first_name
+        receiver.first_name
     end
 
     def sender_email
@@ -48,7 +48,7 @@ class Message < ApplicationRecord
     end
 
     def receiver_email
-        reciever.email
+        receiver.email
     end
 
     def sender_user_name
@@ -56,7 +56,7 @@ class Message < ApplicationRecord
     end
 
     def receiver_user_name
-        reciever.user_name
+        receiver.user_name
     end
 
 end

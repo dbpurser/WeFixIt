@@ -2,12 +2,12 @@ class MessagesController < ApplicationController
     def index
         @inbox=true
         @user = User.find(params[:user_id])
-        if @user.receiver.nil?
-            @messages_recieved = "no messages recieved"
+        if @user.receiver.messages.empty?
+            @messages_received = "no messages received"
         else
-            @messages_recieved = @user.reciever.messages
+            @messages_received = @user.receiver.messages
         end
-        if @user.sender.nil?
+        if @user.sender.messages.empty?
             @messages_sent = "no messages sent"
         else
             @messages_sent = @user.sender.messages
@@ -18,12 +18,12 @@ class MessagesController < ApplicationController
     def outbox
         @inbox=false
         @user = User.find(params[:user_id])
-        if @user.receiver.nil?
-            @messages_recieved = "no messages recieved"
+        if @user.receiver.messages.empty?
+            @messages_received = "no messages received"
         else
-            @messages_recieved = @user.reciever.messages
+            @messages_received = @user.receiver.messages
         end
-        if @user.sender.nil?
+        if @user.sender.messages.empty?
             @messages_sent = "no messages sent"
         else
             @messages_sent = @user.sender.messages

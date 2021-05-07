@@ -24,7 +24,7 @@
 </div>
 
 <% if @inbox==true%>
-    <% if @messages_recieved=="no messages recieved"%>
+    <% if @messages_received=="no messages received"%>
         <table class="table table-striped table-hover">
 
         <thead class="box table thead-dark">
@@ -53,7 +53,7 @@
         </thead>
 
         <tbody>
-                <% @messages_recieved.each do |message| %>
+                <% @messages_received.each do |message| %>
                 <tr>
                     <td><%= message.sender_user_name %></td>
                     <td><%= message.content %></td>
@@ -98,7 +98,7 @@
         <tbody>
                 <% @messages_sent.each do |message| %>
                 <tr>
-                    <td><%= message.reciever_user_name %></td>
+                    <td><%= message.receiver_user_name %></td>
                     <td><%= message.content %></td>
                 </tr>
                 <% end %>
