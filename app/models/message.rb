@@ -2,18 +2,21 @@
 #
 # Table name: messages
 #
-#  id         :bigint           not null, primary key
-#  content    :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  sender_id  :bigint
+#  id          :bigint           not null, primary key
+#  content     :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  receiver_id :bigint
+#  sender_id   :bigint
 #
 # Indexes
 #
-#  index_messages_on_sender_id  (sender_id)
+#  index_messages_on_receiver_id  (receiver_id)
+#  index_messages_on_sender_id    (sender_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (receiver_id => receivers.id)
 #  fk_rails_...  (sender_id => senders.id)
 #
 class Message < ApplicationRecord
@@ -24,12 +27,19 @@ class Message < ApplicationRecord
         foreign_key: 'sender_id',
         inverse_of: :messages
       )
+      belongs_to(
+        :receiver,
+        class_name: 'Receiver',
+        foreign_key: 'receiver_id',
+        inverse_of: :messages
+      )
+    
 
     def sender_name
         sender.first_name
     end
 
-    def reciever_name
+    def receiver_name
         reciever.first_name
     end
 
@@ -37,7 +47,7 @@ class Message < ApplicationRecord
         sender.email
     end
 
-    def reciever_email
+    def receiver_email
         reciever.email
     end
 
@@ -45,7 +55,7 @@ class Message < ApplicationRecord
         sender.user_name
     end
 
-    def reciever_user_name
+    def receiver_user_name
         reciever.user_name
     end
 
