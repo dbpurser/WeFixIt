@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'consultations/index'
   devise_for :users
   root to: redirect('/home')
   
 
   get 'home', to: 'pages#home', as: 'home'
   get 'user/:id', to: 'user#show', as: 'user'
+  get '/consultations', to: 'consultations#index'
   get 'users', to: 'user#cuslist', as: 'user_list'
   
 
