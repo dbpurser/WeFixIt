@@ -24,14 +24,6 @@ class Receiver < ApplicationRecord
         inverse_of: :receiver
     )
 
-    has_many(
-        :messages,
-        class_name: 'Message',
-        foreign_key: 'receiver_id',
-        inverse_of: :receiver,
-        dependent: :destroy
-      )
-
     def first_name
         user.first_name
     end
