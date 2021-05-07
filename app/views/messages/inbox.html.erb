@@ -1,31 +1,57 @@
 <style>
+    .body{
+        background-color: grey;
+      }
     .box{
         border: solid;
         border-radius: 5px;
         border-color: white;
-        border-width:3mm;
+        border-width:2mm;
         background-color: #A67B5B;
         margin-left: auto; 
         margin-right: auto;
         padding: 100px;
       }
+      .header2{
+        border-radius: 5px;
+        border-color: white;
+        background-color: #A67B5B;
+        text-align: center;
+        color: black;
+        margin-bottom: 100px;
+        border-style: solid;
+        border-width: 2mm;
+        padding: 30px 0px;
+      }
+      .menu {
+        list-style-type: none;
+        width: 2cm;
+      }
+      .inbox{
+          display: inline;
+      }
 </style>
 
 
-<h1>Messages Recieved</h1>
-<div class="menu">
-    <p>
-        <%= link_to "inbox", user_inbox_path(current_user), class: 'btn btn-custom-color'%>
-    </p>
+<h2 class="header2">Messages Recieved</h1>
+<body class="body">
+<div>
 
-    <p>
+    <ul class="menu">
+    <li class='inbox'>
+        <%= link_to "inbox", user_inbox_path(current_user), class: 'btn btn-custom-color'%>
+    </li>
+
+    <li class='inbox'>
         <%= link_to "outbox", user_outbox_path(current_user), class: 'btn btn-custom-color'%>
-    </p>
+    </li>
+
+    </ul>
 </div>
 
 <% if @inbox==true%>
     <% if @messages_received=="no messages received"%>
-        <table class="table table-striped table-hover">
+        <table class="table box table-striped table-hover">
 
         <thead class="box table thead-dark">
             <tr>
@@ -45,7 +71,7 @@
     <% else %>
         <table class="table table-striped table-hover">
 
-        <thead class="box table thead-dark">
+        <thead class="box table">
             <tr>
             <th>sent from</th>
             <th>message</th>
@@ -107,4 +133,5 @@
         </table>
     <%end%>
 <% end %>
-<%= link_to 'profile', user_path(current_user)%>
+
+</body>
