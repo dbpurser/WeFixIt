@@ -17,7 +17,7 @@
     .header1{
         border-radius: 5px;
         background-color: #A67B5B;
-        border-color: powderblue;
+        border-color: white;
         text-align: center;
         color: black;
         border-style: solid;
@@ -31,7 +31,7 @@
     .header2{
         border-radius: 5px;
         background-color: #A67B5B;
-        border-color: powderblue;
+        border-color: white;
         text-align: center;
         color: black;
         margin-bottom: 100px;
@@ -46,7 +46,7 @@
         border-radius: 5px;
         border-width:3mm;
         background-color: #A67B5B;
-        border-color: powderblue;
+        border-color: white;
         margin-left: auto; 
         margin-right: auto;
         padding-bottom: 0%;
