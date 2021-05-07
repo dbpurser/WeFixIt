@@ -23,6 +23,12 @@ class Receiver < ApplicationRecord
         foreign_key: 'user_id',
         inverse_of: :receiver
     )
+    has_many(
+        :messages,
+        class_name: 'Message',
+        foreign_key: 'message_id',
+        inverse_of: :receiver
+    )
 
     def first_name
         user.first_name
