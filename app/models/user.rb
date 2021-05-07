@@ -61,7 +61,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  
+  has_one(
+    :sender,
+    class_name: 'Sender',
+    foreign_key: 'user_id',
+    inverse_of: :user,
+    dependent: :destroy
+  )
+
   has_many(
     :devices,
     class_name: 'Device',
@@ -69,10 +76,10 @@ class User < ApplicationRecord
     inverse_of: :user,
     dependent: :destroy
   )
-
+  
   has_one(
-    :reciever,
-    class_name: 'Reciever',
+    :receiver,
+    class_name: 'Receiver',
     foreign_key: 'user_id',
     inverse_of: :user,
     dependent: :destroy
