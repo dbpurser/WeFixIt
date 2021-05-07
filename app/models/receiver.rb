@@ -31,4 +31,19 @@ class Receiver < ApplicationRecord
         inverse_of: :receiver,
         dependent: :destroy
       )
+
+    def first_name
+        user.first_name
+    end
+
+    def user_name
+        email_container = Mail::Address.new
+        email_container.address = user.email
+        email_container.local
+    end
+
+    def email
+        user.email
+    end
+
 end
