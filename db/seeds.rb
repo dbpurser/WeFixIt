@@ -93,6 +93,8 @@ device1 = Device.create!(
   damage: "other",
   extra: "it wont turn on :(",
   consultationAvailability: "2021-04-20 02:20:00",
+  approved: nil,
+  denial_reason: '',
   user: user1
 )
 
@@ -103,5 +105,7 @@ device2 = Device.create!(
   damage: "spilled juice",
   extra: "My daughter, Eleven, spilled some juice on my laptop, can you fix it?",
   consultationAvailability: "2021-04-23 02:20:00",
+  approved: nil,
+  denial_reason: '',
   user: user2
 )

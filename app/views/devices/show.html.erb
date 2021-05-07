@@ -36,8 +36,10 @@
         border-width: 2mm;
         padding: 30px 0px;
 </style>
+
 <head>
 </head>
+<% types = Array[true, false] %>
 
 <body class="body">
 
@@ -49,10 +51,36 @@
     Reported Damage: <%= @devices.damage %><br>
     Details: <%= @devices.extra %><br>
     Consultation Availability: <%= @devices.consultationAvailability %>
+    <% if current_user.is_admin == true %>
+      <%= bootstrap_form_with model: @user, method: :patch, url: user_devices_show_path(@user, @devices), local: true do |f| %>
+        
+        <div class="row1">
+          <div class="level1">
+          <%= f.select :approval, types, required: true %>
+          <%= f.text_field :denial_reason %>
+          <div class="submit">
+                <%= f.submit "Submit", class: 'btn btn-custom-color'%>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    <%end%>
+      
 </p>
 
 
 <p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
   <%= link_to 'Back',user_devices_path(current_user), class: "btn btn-dark" %>
 </p>

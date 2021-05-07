@@ -3,9 +3,11 @@
 # Table name: devices
 #
 #  id                       :bigint           not null, primary key
+#  approved                 :boolean
 #  brand                    :string
 #  consultationAvailability :datetime
 #  damage                   :string
+#  denial_reason            :string
 #  deviceType               :string
 #  extra                    :text
 #  model                    :string

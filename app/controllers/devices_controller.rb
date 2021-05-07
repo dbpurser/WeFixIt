@@ -7,6 +7,7 @@ class DevicesController < ApplicationController
     end
 
     def show
+        @user = User.find(params[:user_id])
         @devices = Device.find(params[:device_id])
         render :show
     end
@@ -30,4 +31,15 @@ class DevicesController < ApplicationController
         render :new
     end
 
+    def update 
+        @devices = Device.find(params[:device_id])
+        if @devices.update(params.require(:device).permit(:approval))
+            flash[:success] = "Form submitted successfully"
+            redirect_to user_devices_url(@user)
+        else
+            render :new
+            flash.now[:error] = "Form unable to submit"
+        end
+    end
+        
 end
