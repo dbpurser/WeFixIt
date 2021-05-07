@@ -56,7 +56,9 @@
             <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
         </div>
     <% end %>
-    
+    <p class = "messages"> 
+        <%= link_to "Message Inbox", user_inbox_path(current_user)%>
+    </p>
     <p class = paragraph>
         <% if user_signed_in? %>
             Email: <%= @user.email %> <br>
