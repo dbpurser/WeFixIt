@@ -29,8 +29,8 @@ class Message < ApplicationRecord
       )
       belongs_to(
         :receiver,
-        class_name: 'Reciever',
-        foreign_key: 'reciever_id',
+        class_name: 'Receiver',
+        foreign_key: 'receiver_id',
         inverse_of: :messages
       )
     
@@ -39,7 +39,7 @@ class Message < ApplicationRecord
         sender.first_name
     end
 
-    def reciever_name
+    def receiver_name
         reciever.first_name
     end
 
@@ -47,7 +47,7 @@ class Message < ApplicationRecord
         sender.email
     end
 
-    def reciever_email
+    def receiver_email
         reciever.email
     end
 
@@ -55,7 +55,7 @@ class Message < ApplicationRecord
         sender.user_name
     end
 
-    def reciever_user_name
+    def receiver_user_name
         reciever.user_name
     end
 
