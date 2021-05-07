@@ -44,8 +44,6 @@ go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
 
 <body class="body">
 
-<h2 class="header2">Welcome to We Fix It!</h2>
-
     <div class="box">
         
         <% if user_signed_in? %>
@@ -56,10 +54,6 @@ go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
                 </p>
 
             <% end %>
-            
-            <p>
-                <%= link_to 'Set up Consultation', new_user_device_path(current_user), class: 'btn btn-primary btn-sm'%>
-            </p>
             
             <p>
                 <%= link_to 'Look at devices submitted', user_devices_path(current_user), class: 'btn btn-primary btn-sm'%>
@@ -100,24 +94,13 @@ go to https://www.w3schools.com/Css/css_align.asp to learn what about alignment
             </p>
             
             <p>
-                Easy! Just click on the box below!
+                Easy! Use the sign up link above!
             </p>
             
             <p>
-                <div class="sign_up">
-                    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
-                </div>
+                Already signed up? Sign In above!
             </p>
             
-            <p>
-                Already signed up? Click below to sign in!
-            </p>
-            
-            <p>
-                <div class="sign_in">
-                    <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
-                </div>
-            </p>
         <% end %>
         
     </div>
