@@ -37,4 +37,5 @@ class Receiver < ApplicationRecord
     def email
         user.email
     end
+
 end

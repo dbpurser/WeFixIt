@@ -6,8 +6,25 @@
 #  content    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  sender_id  :bigint
+#
+# Indexes
+#
+#  index_messages_on_sender_id  (sender_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (sender_id => senders.id)
 #
 class Message < ApplicationRecord
+
+    belongs_to(
+        :sender,
+        class_name: 'Sender',
+        foreign_key: 'sender_id',
+        inverse_of: :messages
+      )
+
     def sender_name
         sender.first_name
     end
@@ -31,4 +48,5 @@ class Message < ApplicationRecord
     def reciever_user_name
         reciever.user_name
     end
+
 end

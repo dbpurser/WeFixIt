@@ -23,6 +23,14 @@ class Sender < ApplicationRecord
         foreign_key: 'user_id',
         inverse_of: :sender
     )
+
+    has_many(
+        :messages,
+        class_name: 'Message',
+        foreign_key: 'sender_id',
+        inverse_of: :sender,
+        dependent: :destroy
+      )
     
     def first_name
         user.first_name
