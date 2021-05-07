@@ -20,7 +20,7 @@ class Message < ApplicationRecord
 
     belongs_to(
         :receiver,
-        class_name: 'receiver',
+        class_name: 'Receiver',
         foreign_key: 'receiver_id',
         inverse_of: :messages
       )
