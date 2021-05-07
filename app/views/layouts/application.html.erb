@@ -11,6 +11,44 @@
   </head>
 
   <body>
+
+    
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+          <p class="nav-link"><%=link_to 'We Fix It', home_path, class: 'btn btn-lg btn-custom-color'%></p>
+      </li>
+      <li class="nav-item">
+          <p class="nav-link"><%=link_to 'home', home_path, class: 'btn btn-lg btn-custom-color'%></p>
+     </li>
+    <% if current_user%>
+      <li class="nav-item">
+          <p class="nav-link"><%=link_to 'profile', user_path(current_user), class: 'btn btn-lg btn-custom-color'%></p>
+      </li>
+      <li class="nav-item">
+          <p class="nav-link"><%=link_to 'consultation form submission', new_user_device_path(current_user), class: 'btn btn-lg btn-custom-color'%></p>
+      </li>
+    <%else%>
+      <li class="nav-item">
+          <p class="nav-link"><%= link_to 'Sign In', new_user_session_path, class: 'btn btn-lg btn-custom-color'%></p>
+      </li>
+      <li class="nav-item">
+          <p class="nav-link"><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-lg btn-custom-color'%></p>
+      </li>
+    <%end%>
+  <% if user_signed_in? %>
+    <li class="nav-item greeting">
+        Hello, <%= current_user.email%> 
+    </li>
+    <% end %>
+    
+  <div class= "authentication-block" style= "float:right">
+   <% if user_signed_in? %>
+
+        <li class="nav-item">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-lg btn-custom-color' %>
+        </li>
+    <% end %>
+  </ul>
     <main role="main" class="container">
       <%= yield %>
     </main>

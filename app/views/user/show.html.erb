@@ -40,23 +40,7 @@
 
 <h1 class = "header2">Profile</h1>
 <body class = "body">
-    <% if user_signed_in? %>
-        <div class="greeting">
-            Hello, <%= current_user.email%> <%= link_to 'edit profile', edit_user_registration_path%>
-        </div>
 
-        <div class="sign_out">
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' %>
-        </div>
-    <% else %>
-        <div class="sign_in">
-            <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-sm' %>
-        </div>
-         <div class="sign_up">
-            <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-sm' %>
-        </div>
-    <% end %>
-    
     <p class = paragraph>
         <% if user_signed_in? %>
             Email: <%= @user.email %> <br>
@@ -67,7 +51,17 @@
             State: <%= @user.state %><br>
             Zip: <%= @user.zip_code %><br>
             Phone: <%= @user.phone_number %> <br>
+
+            <%= link_to "Message Inbox", user_inbox_path(current_user), class: 'btn btn-custom-color'%>
+
+            <% if current_user.is_admin == true %>
+                <%= link_to "Customer Registry", user_list_path, class: 'btn btn-custom-color' %>
+            <% else %>
+                <%= link_to 'Look at devices submitted', user_devices_path(current_user), class: 'btn btn-custom-color'%>
+            <% end %>
         <% end %>
+
+
 
     </p>
 </body>

@@ -17,7 +17,7 @@ class DevicesController < ApplicationController
         
         if @device.save
             flash[:success] = "Form submitted successfully"
-            redirect_to user_devices_url(@user)
+            redirect_to new_user_device_confirmation_url(@user, @device)
         else
             render :new
             flash.now[:error] = "Form unable to submit"
@@ -30,12 +30,27 @@ class DevicesController < ApplicationController
         render :new
     end
 
+<<<<<<< HEAD
     def destroy
         @user = User.find(params[:user_id])
         @device = @user.devices.find(params[:device_id])
         @device.destroy
         flash[:success] = "Device was successfully destroyed."
         redirect_to user_devices_url(@user)
+=======
+    def confirm
+        @user = User.find(params[:user_id])
+        @device = @user.devices.find(params[:device_id])
+       
+        render :confirmation
+    end
+
+    def destroy
+        @user = User.find(params[:user_id])
+        @device.destroy
+        flash[:success] = "Device was successfully destroyed."
+        redirect_to :back
+>>>>>>> main
     end
 
 end

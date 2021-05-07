@@ -1,0 +1,39 @@
+<head>
+
+<link rel="sylesheet" href="devices/new.css">
+
+
+</head>
+
+
+<body class="body">
+<div class="header1">
+    <p class=text>We Fix It</p>
+</div>
+
+<p class="home">
+    <%= link_to 'home', home_path, class: 'btn btn-custom-color'%>
+</p>
+
+<p class="profile">
+    <%= link_to 'profile', nil, class: 'btn btn-custom-color'%>
+</p>
+
+<h2 class="header2">Repair Form </h2>
+
+
+
+
+<% progress = Array['In Progress', 'Processing', 'Complete', 'Ready for Pickup'] %>
+<% complete = Array[true, false] %>
+
+<%= bootstrap_form_with(model: repair) do |f| %>
+
+  <%= f.select :status, progress %>
+  <%= f.select :completed, complete %>
+  <%= f.text_area :specialist %>
+  <%= f.submit class: 'btn btn-primary my-3' %>
+
+<% end %>
+
+</body>
