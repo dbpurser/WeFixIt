@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_051048) do
+ActiveRecord::Schema.define(version: 2021_05_07_050713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,29 @@ ActiveRecord::Schema.define(version: 2021_04_19_051048) do
     t.index ["user_id"], name: "index_devices_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
+    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "notif_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "receivers", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_receivers_on_user_id"
+  end
+
   create_table "repairs", force: :cascade do |t|
     t.string "status"
     t.boolean "completed"
@@ -43,6 +66,13 @@ ActiveRecord::Schema.define(version: 2021_04_19_051048) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "device_id"
     t.index ["device_id"], name: "index_repairs_on_device_id"
+  end
+
+  create_table "senders", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_senders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,5 +97,9 @@ ActiveRecord::Schema.define(version: 2021_04_19_051048) do
   end
 
   add_foreign_key "devices", "users"
+  add_foreign_key "messages", "receivers"
+  add_foreign_key "messages", "senders"
+  add_foreign_key "receivers", "users"
   add_foreign_key "repairs", "devices"
+  add_foreign_key "senders", "users"
 end
