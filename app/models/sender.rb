@@ -17,9 +17,6 @@
 #
 class Sender < ApplicationRecord
 
-<<<<<<< HEAD
-
-
     def first_name
         user.first_name
     end
@@ -33,7 +30,7 @@ class Sender < ApplicationRecord
     def email
         user.email
     end
-=======
+
     belongs_to(
         :user,
         class_name: 'User',
@@ -41,5 +38,4 @@ class Sender < ApplicationRecord
         inverse_of: :sender
     )
     
->>>>>>> main
 end
