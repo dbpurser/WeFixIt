@@ -63,6 +63,7 @@ class Device < ApplicationRecord
         end
     end
 
+    #estimated repair cost
     COSTS = {
     'phone' => {
       'broken screen' => 10,
