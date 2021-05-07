@@ -1,0 +1,74 @@
+<style>
+     .body{
+        background-color: grey;
+      }
+
+    .header2{
+        border-radius: 5px;
+        border-color: white;
+        background-color: #A67B5B;
+        text-align: center;
+        color: black;
+        margin-bottom: 100px;
+        border-style: solid;
+        border-width: 2mm;
+        padding: 30px 0px;
+      }
+    .box{
+        border: solid;
+        border-radius: 5px;
+        border-color: white;
+        border-width:3mm;
+        background-color: #A67B5B;
+        margin-left: auto; 
+        margin-right: auto;
+        padding: 100px;
+      }
+</style>
+
+
+<h1>Confirmation Page</h1>
+
+<table class=" box table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Make Sure Everything looks Correct</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+            <tr>
+                <td>Device Type: </td>
+            </tr>
+            <tr>
+                <td>Brand: </td>
+            <tr>
+            <tr>
+                <td>Model: </td>
+            <tr>
+            <tr>
+                <td>Consultation Availability: </td>
+            <tr>
+            <tr>
+                <td>Damage: </td>
+            <tr>
+            <tr>
+                <td>Extra Information: </td>
+            <tr>
+
+            <tr>
+                <td><%= link_to "Confirm", user_devices_url(@user), class: 'btn btn-custom-color'%> </td>
+            <tr>
+
+            <tr>
+                <td><%= link_to "Cancel", :back, class: 'btn btn-custom-color'%> </td>
+            <tr>
+
+            
+  </tbody>
+
+
+
+</table>
+
