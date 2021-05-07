@@ -17,6 +17,13 @@
 #
 class Sender < ApplicationRecord
 
+    belongs_to(
+        :user,
+        class_name: 'User',
+        foreign_key: 'user_id',
+        inverse_of: :sender
+    )
+    
     def first_name
         user.first_name
     end
@@ -31,11 +38,4 @@ class Sender < ApplicationRecord
         user.email
     end
 
-    belongs_to(
-        :user,
-        class_name: 'User',
-        foreign_key: 'user_id',
-        inverse_of: :sender
-    )
-    
 end
