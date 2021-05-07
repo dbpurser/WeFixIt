@@ -57,7 +57,7 @@
         </div>
     <% end %>
     <p class = "messages"> 
-        <%= link_to "Message Inbox", user_inbox_path(current_user)%>
+        <%= link_to "Message Inbox", user_inbox_path(current_user), class: 'btn btn-custom-color'%>
     </p>
     <p class = paragraph>
         <% if user_signed_in? %>
