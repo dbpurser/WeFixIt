@@ -52,7 +52,7 @@
     Details: <%= @devices.extra %><br>
     Consultation Availability: <%= @devices.consultationAvailability %>
     <% if current_user.is_admin == true %>
-      <%= bootstrap_form_with model: @user, method: :patch, url: user_devices_show_path(@user, @devices), local: true do |f| %>
+      <%= bootstrap_form_with model: @devices, method: :patch, url: user_devices_show_path(@user, @devices), local: true do |f| %>
         
         <div class="row1">
           <div class="level1">
